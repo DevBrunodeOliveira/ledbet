@@ -51,15 +51,16 @@ function resetGame() {
   speed = 5;
   lastFrameTime = performance.now();
 
+  spaceshipEl.textContent = '🚀'
   spaceshipEl.style.bottom = '0px';
-  countdownEl.textContent = `Proximo Round em 5`;
+  countdownEl.textContent = `Proximo Round em ...`;
   statusEl.textContent = '';
   goldEarnedEl.textContent = '';
   stopBtn.disabled = true;
   enterBtn.disabled = false;
   goldInput.disabled = false;
 
-  countdown = 5;
+  countdown = 10;
   startCountdown();
 }
 
@@ -136,13 +137,16 @@ function explode() {
 
   if (playerEntered) {
     if (cashedOut) {
+      spaceshipEl.textContent = '💥'
       statusEl.textContent = '💥 O Foguete explodiu! Mas Voce ja Esta Salvo!';
       // goldEarnedEl already shows earned gold
     } else {
+      spaceshipEl.textContent = '💥'
       statusEl.textContent = '💥 O Foguete explodiu! Voce Explodiu Junto Este Roud!';
       goldEarnedEl.textContent = '';
     }
   } else {
+    spaceshipEl.textContent = '💥'
     statusEl.textContent = '💥 O Foguete explodiu!';
     goldEarnedEl.textContent = '';
   }

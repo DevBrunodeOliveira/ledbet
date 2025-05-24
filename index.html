@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Led Bet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav role="navigation" aria-label="Primary navigation">
+        <div class="logo" aria-label="Led Bet">Led Bet</div>
+        <div class="auth-buttons">
+            <button type="button" id="loginBtn" aria-label="Login to your account">Login</button>
+            <button type="button" id="signUpBtn" aria-label="Sign up for new account">Sign Up</button>
+        </div>
+        <div class="user-info" aria-live="polite" role="region" aria-label="User account information">
+            <span class="name"></span>
+            <span class="balance"></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" aria-label="Slots game introduction and play button">
+            <h2>Gire em Slots &amp; Ganhe</h2>
+            <p>Jogue o classico Slots e Tente um Jackpot!</p>
+            <a href="slots.html" class="btn-play" aria-label="Start playing slots">Play Slots 🎰</a>
+        </section>
+
+        <section class="hero" aria-label="Foguete">
+            <h2>Decole ao Espaço!</h2>
+            <p>Embarque no Foguete e Multiplique Seus Ganhos, Mas Cuidado Para Não Explodir!</p>
+            <a href="foguete.html" class="btn-play" aria-label="Start playing Foguete">Play Foguete 🚀</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        &copy; 2025 Prévia Desenvolvida por Dev Bruno &mdash; Todos os Direitos Reservados.
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle"
+        tabindex="-1">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close login modal" id="closeLoginBtn">&times;</button>
+            <h3 id="loginModalTitle">Login</h3>
+            <form id="loginForm" autocomplete="off">
+                <label for="loginEmail">Login</label>
+                <input type="text" id="loginEmail" name="loginEmail" required placeholder="you@example.com" />
+                <label for="loginPassword">Seenha</label>
+                <input type="password" id="loginPassword" name="loginPassword" required
+                    placeholder="Enter your password" />
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="signUpModalTitle"
+        tabindex="-1">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close sign up modal" id="closeSignUpBtn">&times;</button>
+            <h3 id="signUpModalTitle">Sign Up</h3>
+            <form id="signUpForm" autocomplete="off">
+                <label for="signUpEmail">Login</label>
+                <input type="email" id="signUpEmail" name="signUpEmail" required placeholder="you@example.com" />
+                <label for="signUpPassword">Senha</label>
+                <input type="password" id="signUpPassword" name="signUpPassword" required
+                    placeholder="Choose a password" />
+                <button type="submit" class="submit-btn">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

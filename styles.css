@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #1a1a1a, #000000);
+    color: #f2c94c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #f2c94c;
+    text-shadow: 0 0 10px #f2c94c;
+    cursor: default;
+}
+
+nav .auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+nav .auth-buttons button {
+    background: transparent;
+    border: 2px solid #f2c94c;
+    color: #f2c94c;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav .auth-buttons button:hover,
+nav .auth-buttons button:focus {
+    background: #f2c94c;
+    color: #1a1a1a;
+    outline: none;
+}
+
+nav .user-info {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+    color: #f2c94c;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    user-select: none;
+    background: #222;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #f2c94caa;
+}
+
+nav .user-info span.name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+nav .user-info span.balance {
+    background: #f2c94c22;
+    color: #f2c94c;
+    padding: 0.15rem 0.6rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+}
+
+/* For wide screens, place hero sections in rows and wrap */
+@media (min-width: 900px) {
+    main {
+        flex-direction: row;
+        gap: 4rem;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex: 1 1 400px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.hero {
+    width: 100%;
+    max-width: 600px;
+    background: #111;
+    border: 2px solid #f2c94c;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 0 30px #f2c94c88;
+    backdrop-filter: blur(6px);
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ffd24dcc;
+}
+
+.btn-play {
+    display: inline-block;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    color: #ffffff;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #ffb700cc;
+    transition: all 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-play:hover,
+.btn-play:focus {
+    background: #f2c94c;
+    box-shadow: 0 0 20px #ffcb45, 0 0 30px #ffcb45;
+    outline: none;
+    transform: scale(1.07);
+}
+
+.footer {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #111;
+    border: 2px solid #f2c94c;
+    border-radius: 15px;
+    padding: 2rem 2.5rem;
+    max-width: 400px;
+    width: 90%;
+    color: #f2c94c;
+    box-shadow: 0 0 30px #f2c94caa;
+    position: relative;
+}
+
+.modal-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 0.75rem 0 0.25rem;
+    font-weight: 600;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.modal-content button.submit-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    color: #1a1a1a;
+    border: none;
+    padding: 1rem 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #ffb700cc;
+    transition: background 0.3s ease;
+}
+
+.modal-content button.submit-btn:hover,
+.modal-content button.submit-btn:focus {
+    background: #f2c94c;
+    outline: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #f2c94c;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #fff;
+    outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav {
+        padding: 1rem 1.25rem;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+    }
+
+    nav .auth-buttons button {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    nav .user-info {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    main {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .hero {
+        padding: 2rem 1.5rem;
+        max-width: 90vw;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-play {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        padding: 1.5rem 1.8rem;
+    }
+}

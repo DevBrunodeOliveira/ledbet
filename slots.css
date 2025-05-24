@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #1a1a1a, #000000);
+    color: #f2c94c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #f2c94c;
+    text-shadow: 0 0 10px #f2c94c;
+    cursor: pointer;
+}
+
+nav .auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+nav .auth-buttons button {
+    background: transparent;
+    border: 2px solid #f2c94c;
+    color: #f2c94c;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav .auth-buttons button:hover,
+nav .auth-buttons button:focus {
+    background: #f2c94c;
+    color: #1a1a1a;
+    outline: none;
+}
+
+nav .user-info {
+    gap: 1rem;
+    align-items: center;
+    color: #f2c94c;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    user-select: none;
+    background: #222;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #f2c94caa;
+}
+
+nav .user-info span.name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+nav .user-info span.balance {
+    background: #f2c94c22;
+    color: #f2c94c;
+    padding: 0.15rem 0.6rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+    box-shadow: 0 0 15px #000000;
+    border-top: 2px solid #d3a721;
+    border-bottom: 2px solid #d3a721;
+
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #f2c94c88;
+}
+
+.slot-machine {
+    background: #2e2a46;
+    border-radius: 15px;
+    box-shadow:
+        0 0 15px #f2c94c88,
+        inset 0 0 15px #f2c94c88;
+    padding: 30px 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.slot {
+    border-radius: 12px;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: #ffcc4b;
+    text-shadow:
+        0 0 5px #fff8b0,
+        0 0 10px #ffcc4b,
+        0 0 20px #ffcc4b;
+    position: relative;
+}
+
+.spinbutton {
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(45deg, #ff4b1f, #f7b733);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow:
+        0 6px 12px #f2c94c88;
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.spinbutton:hover {
+    background: linear-gradient(45deg, #f7b733, #ff4b1f);
+}
+
+.spinbutton:active {
+    box-shadow: 0 3px 6px rgba(255, 75, 31, 0.8);
+    transform: translateY(2px);
+}
+
+.result {
+    margin-top: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    min-height: 36px;
+    text-align: center;
+    user-select: text;
+    color: #ffcc4b;
+    text-shadow:
+        0 0 4px #fff8b0,
+        0 0 8px #ffcc4b;
+    min-width: 250px;
+    border-radius: 10px;
+    padding: 6px 12px;
+}
+
+.money {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: #f2c94c;
+    text-shadow: 0 0 15px #f2c94c;
+    user-select: none;
+}
+
+/* Animation for spinning */
+@keyframes spinAnim {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-500%);
+    }
+}
+
+.slot.spin>span {
+    display: block;
+    animation: spinAnim 1s linear infinite;
+    line-height: 120px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 1px;
+}

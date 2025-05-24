@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Led Bet</title>
+    <link rel="stylesheet" href="foguetestyle.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">
+            <div class="logo">Led Bet</div>
+        </a>
+        <div class="user-info" aria-live="polite" role="region" aria-label="User account information">
+            <span class="name">Ledsom</span>
+            <span class="balance" id="balanceid">R$ 1000,00</span>
+        </div>
+    </nav>
+    <main>
+        <div class="game-container">
+            <div id="countdown">Proximo Round em ...</div>
+            <div id="status"></div>
+            <div id="gold-earned"></div>
+            <div id="spaceship-container">
+                <div id="spaceship">🚀</div>
+            </div>
+            <div class="controls">
+                <input type="number" id="gold-input" placeholder="Enter gold to bet" min="1" />
+                <button id="enter-btn">Entrar</button>
+                <button id="stop-btn" disabled>Sair</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        &copy; 2025 Prévia Desenvolvida por Dev Bruno &mdash; Todos os Direitos Reservados.
+    </footer>
+
+    <script src="foguetescript.js"></script>
+</body>
+
+</html>
